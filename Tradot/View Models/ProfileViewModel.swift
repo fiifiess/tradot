@@ -16,7 +16,7 @@ class ProfileViewModel: ObservableObject {
     @Published var profile: Profile?{
         didSet {
             Task {
-                await fetchAcceptedJobs()
+                await fetchSavedJobs()
                 await fetchPostedJobs()
             }
         }
@@ -24,7 +24,7 @@ class ProfileViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
     @Published var newSkill: String = ""
-    @Published var acceptedJobs: [Job] = []
+    @Published var savedJobs: [Job] = []
     @Published var postedJobs: [Job] = []             
     weak var appViewModel: AppViewModel?
     
@@ -72,7 +72,7 @@ class ProfileViewModel: ObservableObject {
             let fetchedProfile = try await profileService.fetchProfile(uid: userId)
             self.profile = fetchedProfile
             print("ProfileViewModel.fetchProfile(): fetchedProfile.id = \(fetchedProfile.id), name = \(fetchedProfile.name)")
-            await fetchAcceptedJobs() // 25-11
+            await fetchSavedJobs() // 25-11
             await fetchPostedJobs() // 26-11
         } catch {
             self.errorMessage = error.localizedDescription
@@ -256,12 +256,12 @@ class ProfileViewModel: ObservableObject {
         }
     }
 
-    func fetchAcceptedJobs() async {
+    func fetchSavedJobs() async {
         guard let technicianId = profile?.id else { return }
         do {
             let profile = try await profileService.fetchProfile(uid: technicianId)
             let jobIds = profile.workHistory ?? []
-            self.acceptedJobs = try await jobService.getJobsWithIds(jobIds)
+            self.savedJobs = try await jobService.getJobsWithIds(jobIds)
         } catch {
             self.errorMessage = error.localizedDescription
         }
@@ -287,7 +287,7 @@ class ProfileViewModel: ObservableObject {
                 print("ProfileViewModel.listener: received update for profile.id = \(updatedProfile.id)")
                 self?.profile = updatedProfile
                 Task {
-                    await self?.fetchAcceptedJobs()   // Update accepted jobs whenever profile changes
+                    await self?.fetchSavedJobs()   // Update accepted jobs whenever profile changes
                     await self?.fetchPostedJobs()   // Update posted jobs whenever profile changes
                 }
             }

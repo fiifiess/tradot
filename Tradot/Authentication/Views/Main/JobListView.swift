@@ -22,7 +22,7 @@ struct JobListView: View {
                         .fontWeight(.bold)
                     Spacer()
                     NavigationLink(value: "AcceptedJobs") {
-                        Text("My Accepted Jobs")
+                        Text("My Saved Jobs")
                             .font(.subheadline)
                             .padding(8)
                             .background(Color.blue.opacity(0.2))
@@ -68,7 +68,7 @@ struct JobListView: View {
             }// end of VStack
             .navigationDestination(for: String.self) { value in
                 if value == "AcceptedJobs" {
-                    AcceptedJobsView().environmentObject(jobViewModel)
+                    SavedJobsView().environmentObject(jobViewModel)
                 }
             }
             .task {

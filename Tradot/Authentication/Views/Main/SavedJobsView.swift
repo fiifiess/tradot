@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct AcceptedJobsView: View {
+struct SavedJobsView: View {
     
     @EnvironmentObject var profileViewModel: ProfileViewModel
     @State private var selectedJob: Job? = nil
 
     var body: some View {
         VStack {
-            Text("My Accepted Jobs")
+            Text("My Saved Jobs")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.horizontal)
@@ -17,12 +17,12 @@ struct AcceptedJobsView: View {
                 ProgressView("Loading jobs...")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
-                if profileViewModel.acceptedJobs.isEmpty {
-                    Text("No accepted jobs yet.")
+                if profileViewModel.savedJobs.isEmpty {
+                    Text("No saved jobs yet.")
                         .foregroundColor(.gray)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
-                    List(profileViewModel.acceptedJobs) { job in
+                    List(profileViewModel.savedJobs) { job in
                         Button(action: {
                             selectedJob = job
                         }) {
@@ -51,7 +51,7 @@ struct AcceptedJobsView: View {
             // Ensure acceptedJobs are up to date
             Task {
                 if (profileViewModel.profile?.id) != nil {
-                    await profileViewModel.fetchAcceptedJobs()
+                    await profileViewModel.fetchSavedJobs()
                 }
             }
         }
@@ -61,10 +61,10 @@ struct AcceptedJobsView: View {
     }
 }
 
-struct AcceptedJobsView_Previews: PreviewProvider {
+struct SavedJobsView_Previews: PreviewProvider {
     static var previews: some View {
         let appVM = AppViewModel()
-        AcceptedJobsView()
+        SavedJobsView()
             .environmentObject(ProfileViewModel(appViewModel: appVM))
     }
 }

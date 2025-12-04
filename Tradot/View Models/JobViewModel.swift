@@ -14,7 +14,7 @@ final class JobViewModel: ObservableObject {
     @Published var errorMessage : String?
     @Published var jobPostSuccess = false
     @Published var selectedJob: Job?
-    @Published var acceptedJobs: [Job] = []
+    @Published var savedJobs: [Job] = []
     @Published var postedJobs: [Job] = []
     
     private var jobService = JobService.shared
@@ -174,7 +174,7 @@ final class JobViewModel: ObservableObject {
             let profile = try await profileService.fetchProfile(uid: technicianId)
 
             let jobIds = profile.workHistory ?? []
-            acceptedJobs = try await jobService.getJobsWithIds(jobIds)
+            savedJobs = try await jobService.getJobsWithIds(jobIds)
 
         } catch {
             errorMessage = error.localizedDescription

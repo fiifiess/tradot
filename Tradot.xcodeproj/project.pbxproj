@@ -24,13 +24,14 @@
 		726EA9112EB4C2020082A741 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA9102EB4C2020082A741 /* ProfileViewModel.swift */; };
 		726EA9132EB4D5E80082A741 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA9122EB4D5E80082A741 /* ProfileService.swift */; };
 		7281CA962ECF85F3006E8BD0 /* ConversationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281CA952ECF85F3006E8BD0 /* ConversationListView.swift */; };
+		7290B4062EE1BFF0004BCD14 /* Proposal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290B4052EE1BFF0004BCD14 /* Proposal.swift */; };
 		72AED57A2EB3A82900289828 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AED5792EB3A82900289828 /* Profile.swift */; };
 		72B5382A2ECCDC7F00AB3FAB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B538292ECCDC7F00AB3FAB /* Message.swift */; };
 		72B5382C2ECCDD1A00AB3FAB /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5382B2ECCDD1A00AB3FAB /* Conversation.swift */; };
 		72B5382E2ECCE01900AB3FAB /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5382D2ECCE01900AB3FAB /* MessageService.swift */; };
 		72B538302ECCF9E200AB3FAB /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5382F2ECCF9E200AB3FAB /* MessageViewModel.swift */; };
 		72BE37F42ED61B5100D3FB98 /* PostedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE37F32ED61B5100D3FB98 /* PostedJobsView.swift */; };
-		72BF5B922ED095CA00B0BEC3 /* AcceptedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF5B912ED095CA00B0BEC3 /* AcceptedJobsView.swift */; };
+		72BF5B922ED095CA00B0BEC3 /* SavedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF5B912ED095CA00B0BEC3 /* SavedJobsView.swift */; };
 		72C9F8DF2EC6000F00749C69 /* JobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C9F8DE2EC6000F00749C69 /* JobListView.swift */; };
 		72C9F8E12EC6005000749C69 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C9F8E02EC6005000749C69 /* JobDetailView.swift */; };
 		72C9F8E32EC6006200749C69 /* PostJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C9F8E22EC6006200749C69 /* PostJobView.swift */; };
@@ -73,13 +74,14 @@
 		726EA9102EB4C2020082A741 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		726EA9122EB4D5E80082A741 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		7281CA952ECF85F3006E8BD0 /* ConversationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListView.swift; sourceTree = "<group>"; };
+		7290B4052EE1BFF0004BCD14 /* Proposal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proposal.swift; sourceTree = "<group>"; };
 		72AED5792EB3A82900289828 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		72B538292ECCDC7F00AB3FAB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Tradot/Models/Message.swift; sourceTree = SOURCE_ROOT; };
 		72B5382B2ECCDD1A00AB3FAB /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		72B5382D2ECCE01900AB3FAB /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		72B5382F2ECCF9E200AB3FAB /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		72BE37F32ED61B5100D3FB98 /* PostedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedJobsView.swift; sourceTree = "<group>"; };
-		72BF5B912ED095CA00B0BEC3 /* AcceptedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedJobsView.swift; sourceTree = "<group>"; };
+		72BF5B912ED095CA00B0BEC3 /* SavedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedJobsView.swift; sourceTree = "<group>"; };
 		72C9F8DE2EC6000F00749C69 /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
 		72C9F8E02EC6005000749C69 /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		72C9F8E22EC6006200749C69 /* PostJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostJobView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				723F2E172EA7D6020000D1A4 /* Job.swift */,
 				72AED5792EB3A82900289828 /* Profile.swift */,
 				72138CB02ECF8D7B0055243C /* Review.swift */,
+				7290B4052EE1BFF0004BCD14 /* Proposal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,7 +232,7 @@
 				72C9F8E42EC604FA00749C69 /* EditJobView.swift */,
 				721938162ECE121900121CE6 /* MessageView.swift */,
 				7281CA952ECF85F3006E8BD0 /* ConversationListView.swift */,
-				72BF5B912ED095CA00B0BEC3 /* AcceptedJobsView.swift */,
+				72BF5B912ED095CA00B0BEC3 /* SavedJobsView.swift */,
 				72BE37F32ED61B5100D3FB98 /* PostedJobsView.swift */,
 			);
 			path = Main;
@@ -340,7 +343,7 @@
 				726EA9112EB4C2020082A741 /* ProfileViewModel.swift in Sources */,
 				72C9F8E12EC6005000749C69 /* JobDetailView.swift in Sources */,
 				72B5382E2ECCE01900AB3FAB /* MessageService.swift in Sources */,
-				72BF5B922ED095CA00B0BEC3 /* AcceptedJobsView.swift in Sources */,
+				72BF5B922ED095CA00B0BEC3 /* SavedJobsView.swift in Sources */,
 				7203DE9E2EB92DA1006AFF20 /* JobViewModel.swift in Sources */,
 				72C9F8E72EC6506B00749C69 /* ProgressView.swift in Sources */,
 				72E0618F2EA6A6C4005B4396 /* AuthViewModel.swift in Sources */,
@@ -357,6 +360,7 @@
 				72E061952EA6A71C005B4396 /* RegisterView.swift in Sources */,
 				723F2E1C2EA7E89C0000D1A4 /* AuthFlowView.swift in Sources */,
 				721938172ECE121900121CE6 /* MessageView.swift in Sources */,
+				7290B4062EE1BFF0004BCD14 /* Proposal.swift in Sources */,
 				72B538302ECCF9E200AB3FAB /* MessageViewModel.swift in Sources */,
 				723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */,
 				72E061912EA6A6E2005B4396 /* AuthService.swift in Sources */,
