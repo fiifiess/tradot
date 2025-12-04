@@ -23,6 +23,7 @@ struct Profile: Codable, Identifiable {
     var rate: Double?
     var bio: String?
     var imageGallery: [String]?
+    var savedJobs: [String]?
     var workHistory: [String]?
     var jobsPosted: [String]?
     
@@ -54,6 +55,7 @@ extension Profile {
         self.rate = nil
         self.bio = nil
         self.imageGallery = nil
+        self.savedJobs = nil
         self.workHistory = nil
         self.jobsPosted = nil
     }

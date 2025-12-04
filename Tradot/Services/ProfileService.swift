@@ -180,10 +180,10 @@ class ProfileService {
         } 
     }
     
-    // Add a job ID to the technician's work history
-    func addJobToWorkHistory(jobId: String, userId: String) async throws {
+    // Add a job ID to the technician's saved jobs
+    func addJobToSavedJobs(jobId: String, userId: String) async throws {
         
-        print("🔵 ENTERED addJobToWorkHistory")
+        print("🔵 ENTERED addJobToSavedJobs")
         print("Received jobId = \(jobId)")
         print("Received userId = \(userId)")
         
@@ -205,15 +205,15 @@ class ProfileService {
             return
         }
         
-        var workHistory = profileData["workHistory"] as? [String] ?? []
-        print("Existing workHistory ARRAY = \(workHistory)")
-        if !workHistory.contains(jobId) {
-            print("🟢 Adding jobId \(jobId) to workHistory")
-            workHistory.append(jobId)
-            try await profileRef.updateData(["workHistory": workHistory])
-            print("✅ Successfully updated work History in Firestore")
+        var savedJobs = profileData["savedJobs"] as? [String] ?? []
+        print("Existing savedJobs ARRAY = \(savedJobs)")
+        if !savedJobs.contains(jobId) {
+            print("🟢 Adding jobId \(jobId) to savedJobs")
+            savedJobs.append(jobId)
+            try await profileRef.updateData(["savedJobs": savedJobs])
+            print("✅ Successfully updated saved jobs in Firestore")
         } else {
-            print("⚠️ JobId already exists in workHistory")
+            print("⚠️ JobId already exists in savedJobs")
         }
     }
     

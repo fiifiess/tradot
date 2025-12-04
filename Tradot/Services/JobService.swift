@@ -118,15 +118,15 @@ final class JobService {
 // MARK: - Job Actions
 extension JobService {
     
-    /// Accept a job: updates the job status, adds jobId to technician's workHistory and client's jobsPosted
-    func acceptJob(job: Job, technicianId: String) async throws {
+    /// Save a job: updates the job status, adds jobId to technician's workHistory and client's jobsPosted
+    func saveJob(job: Job, technicianId: String) async throws {
         // Update job status
         var updatedJob = job
         updatedJob.status = .accepted
         try await updateJob(updatedJob)
         
         // Update technician's profile
-        try await ProfileService.shared.addJobToWorkHistory(jobId: job.id, userId: technicianId)
+        try await ProfileService.shared.addJobToSavedJobs(jobId: job.id, userId: technicianId)
         
         // Optionally ensure client has the jobId in jobsPosted (redundant if already added at creation)
     }

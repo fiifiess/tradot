@@ -236,20 +236,20 @@ class ProfileViewModel: ObservableObject {
         
     }
     
-    // Adds a job ID to the technician's work history (accepted jobs)
-    func addJobToWorkHistory(jobId: String) async {
+    // Adds a job ID to the technician's saved jobs
+    func addJobToSavedJobs(jobId: String) async {
         guard var currentProfile = profile else { return }
         
-        if currentProfile.workHistory == nil {
-            currentProfile.workHistory = []
+        if currentProfile.savedJobs == nil {
+            currentProfile.savedJobs = []
         }
         
-        if !(currentProfile.workHistory?.contains(jobId) ?? false) {
-            currentProfile.workHistory?.append(jobId)
+        if !(currentProfile.savedJobs?.contains(jobId) ?? false) {
+            currentProfile.savedJobs?.append(jobId)
         }
         
         do {
-            try await profileService.updateProfileField(uid: currentProfile.id, field: "workHistory", value: currentProfile.workHistory ?? [])
+            try await profileService.updateProfileField(uid: currentProfile.id, field: "savedJobs", value: currentProfile.savedJobs ?? [])
             self.profile = currentProfile
         } catch {
             self.errorMessage = error.localizedDescription
@@ -260,7 +260,7 @@ class ProfileViewModel: ObservableObject {
         guard let technicianId = profile?.id else { return }
         do {
             let profile = try await profileService.fetchProfile(uid: technicianId)
-            let jobIds = profile.workHistory ?? []
+            let jobIds = profile.savedJobs ?? []
             self.savedJobs = try await jobService.getJobsWithIds(jobIds)
         } catch {
             self.errorMessage = error.localizedDescription

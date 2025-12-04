@@ -136,18 +136,18 @@ final class JobViewModel: ObservableObject {
         return jobs
     }
     
-    // Accept Job
-    func acceptJob(_ job: Job, technicianId: String) async {
+    // Save Job
+    func saveJob(_ job: Job, technicianId: String) async {
         isLoading = true
         defer { isLoading = false }
         
         do {
             // Update job status
-            try await jobService.acceptJob(job: job, technicianId: technicianId)
+            try await jobService.saveJob(job: job, technicianId: technicianId)
             
             // Add to technician's work history
-            try await profileService.addJobToWorkHistory(jobId: job.id, userId: technicianId)
-            print("JobViewModel.acceptJob has added job \(job.id) to \(technicianId)'s work history")
+            try await profileService.addJobToSavedJobs(jobId: job.id, userId: technicianId)
+            print("JobViewModel.saveJob has added job \(job.id) to \(technicianId)'s saved jobs")
             
             // Add to client's jobsPosted if necessary (optional, usually already added when job created)
             // try await profileService.addJobToJobsPosted(jobId: job.id, userId: job.clientId)

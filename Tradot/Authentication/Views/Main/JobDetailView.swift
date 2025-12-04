@@ -53,11 +53,11 @@ struct JobDetailView: View {
                         //Action Buttons
                         HStack(spacing: 16){
                             if userIsTechnician(){
-                                Button("Accept"){
-                                    // Accept action
+                                Button("Save"){
+                                    // Save action
                                     Task {
                                         guard let technicianId = profileViewModel.profile?.id else { return }
-                                        await jobViewModel.acceptJob(job, technicianId: technicianId)
+                                        await jobViewModel.saveJob(job, technicianId: technicianId)
                                     }
                                 }
                                 .buttonStyle(.borderedProminent)
