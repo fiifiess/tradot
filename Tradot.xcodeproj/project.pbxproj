@@ -21,10 +21,12 @@
 		723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E192EA7DFB20000D1A4 /* AppViewModel.swift */; };
 		723F2E1C2EA7E89C0000D1A4 /* AuthFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E1B2EA7E89C0000D1A4 /* AuthFlowView.swift */; };
 		723F2E1E2EA7E96E0000D1A4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E1D2EA7E96E0000D1A4 /* RootView.swift */; };
+		7268E22B2EE2F07100AB2A0D /* ProposalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268E22A2EE2F07100AB2A0D /* ProposalViewModel.swift */; };
 		726EA9112EB4C2020082A741 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA9102EB4C2020082A741 /* ProfileViewModel.swift */; };
 		726EA9132EB4D5E80082A741 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA9122EB4D5E80082A741 /* ProfileService.swift */; };
 		7281CA962ECF85F3006E8BD0 /* ConversationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281CA952ECF85F3006E8BD0 /* ConversationListView.swift */; };
 		7290B4062EE1BFF0004BCD14 /* Proposal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290B4052EE1BFF0004BCD14 /* Proposal.swift */; };
+		7290B4082EE1EAD1004BCD14 /* ProposalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7290B4072EE1EAD1004BCD14 /* ProposalService.swift */; };
 		72AED57A2EB3A82900289828 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AED5792EB3A82900289828 /* Profile.swift */; };
 		72B5382A2ECCDC7F00AB3FAB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B538292ECCDC7F00AB3FAB /* Message.swift */; };
 		72B5382C2ECCDD1A00AB3FAB /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5382B2ECCDD1A00AB3FAB /* Conversation.swift */; };
@@ -71,10 +73,12 @@
 		723F2E192EA7DFB20000D1A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		723F2E1B2EA7E89C0000D1A4 /* AuthFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowView.swift; sourceTree = "<group>"; };
 		723F2E1D2EA7E96E0000D1A4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7268E22A2EE2F07100AB2A0D /* ProposalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewModel.swift; sourceTree = "<group>"; };
 		726EA9102EB4C2020082A741 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		726EA9122EB4D5E80082A741 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		7281CA952ECF85F3006E8BD0 /* ConversationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListView.swift; sourceTree = "<group>"; };
 		7290B4052EE1BFF0004BCD14 /* Proposal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proposal.swift; sourceTree = "<group>"; };
+		7290B4072EE1EAD1004BCD14 /* ProposalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalService.swift; sourceTree = "<group>"; };
 		72AED5792EB3A82900289828 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		72B538292ECCDC7F00AB3FAB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Tradot/Models/Message.swift; sourceTree = SOURCE_ROOT; };
 		72B5382B2ECCDD1A00AB3FAB /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				7203DE9D2EB92DA1006AFF20 /* JobViewModel.swift */,
 				72B5382F2ECCF9E200AB3FAB /* MessageViewModel.swift */,
 				721938182ECE2EAC00121CE6 /* ConversationViewModel.swift */,
+				7268E22A2EE2F07100AB2A0D /* ProposalViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				72B5382D2ECCE01900AB3FAB /* MessageService.swift */,
 				726EA9122EB4D5E80082A741 /* ProfileService.swift */,
 				7203DE9F2EB9321A006AFF20 /* JobService.swift */,
+				7290B4072EE1EAD1004BCD14 /* ProposalService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				7290B4062EE1BFF0004BCD14 /* Proposal.swift in Sources */,
 				72B538302ECCF9E200AB3FAB /* MessageViewModel.swift in Sources */,
 				723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */,
+				7290B4082EE1EAD1004BCD14 /* ProposalService.swift in Sources */,
 				72E061912EA6A6E2005B4396 /* AuthService.swift in Sources */,
 				72C9F8DF2EC6000F00749C69 /* JobListView.swift in Sources */,
 				72E061A12EA6A850005B4396 /* Extensions.swift in Sources */,
@@ -372,6 +379,7 @@
 				72E0619D2EA6A7C0005B4396 /* ProfileView.swift in Sources */,
 				72B5382A2ECCDC7F00AB3FAB /* Message.swift in Sources */,
 				72E0618D2EA6A61F005B4396 /* User.swift in Sources */,
+				7268E22B2EE2F07100AB2A0D /* ProposalViewModel.swift in Sources */,
 				72E0619F2EA6A837005B4396 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
