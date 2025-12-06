@@ -17,6 +17,7 @@
 		7216C7582EA6632400FE77B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7216C7572EA6632300FE77B6 /* GoogleService-Info.plist */; };
 		721938172ECE121900121CE6 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721938162ECE121900121CE6 /* MessageView.swift */; };
 		721938192ECE2EAC00121CE6 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721938182ECE2EAC00121CE6 /* ConversationViewModel.swift */; };
+		722F59FD2EE4AC81005C9F97 /* ProposalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F59FC2EE4AC81005C9F97 /* ProposalView.swift */; };
 		723F2E182EA7D6020000D1A4 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E172EA7D6020000D1A4 /* Job.swift */; };
 		723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E192EA7DFB20000D1A4 /* AppViewModel.swift */; };
 		723F2E1C2EA7E89C0000D1A4 /* AuthFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E1B2EA7E89C0000D1A4 /* AuthFlowView.swift */; };
@@ -69,6 +70,7 @@
 		7216C7572EA6632300FE77B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		721938162ECE121900121CE6 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		721938182ECE2EAC00121CE6 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		722F59FC2EE4AC81005C9F97 /* ProposalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalView.swift; sourceTree = "<group>"; };
 		723F2E172EA7D6020000D1A4 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		723F2E192EA7DFB20000D1A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		723F2E1B2EA7E89C0000D1A4 /* AuthFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				72E0619C2EA6A7C0005B4396 /* ProfileView.swift */,
 				72C9F8DE2EC6000F00749C69 /* JobListView.swift */,
 				72C9F8E02EC6005000749C69 /* JobDetailView.swift */,
+				722F59FC2EE4AC81005C9F97 /* ProposalView.swift */,
 				72C9F8E22EC6006200749C69 /* PostJobView.swift */,
 				72C9F8E62EC6506B00749C69 /* ProgressView.swift */,
 				72C9F8E42EC604FA00749C69 /* EditJobView.swift */,
@@ -361,6 +364,7 @@
 				72B5382C2ECCDD1A00AB3FAB /* Conversation.swift in Sources */,
 				723F2E182EA7D6020000D1A4 /* Job.swift in Sources */,
 				72AED57A2EB3A82900289828 /* Profile.swift in Sources */,
+				722F59FD2EE4AC81005C9F97 /* ProposalView.swift in Sources */,
 				726EA9132EB4D5E80082A741 /* ProfileService.swift in Sources */,
 				7216C74C2EA655BF00FE77B6 /* ContentView.swift in Sources */,
 				72E061952EA6A71C005B4396 /* RegisterView.swift in Sources */,

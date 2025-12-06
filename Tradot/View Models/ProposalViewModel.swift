@@ -19,6 +19,12 @@ final class ProposalViewModel: ObservableObject {
     private var proposalsListener: ListenerRegistration? = nil
     private var acceptedListener: ListenerRegistration? = nil
     
+//    weak var appViewModel: AppViewModel?
+//    
+//    init(appViewModel: AppViewModel) {
+//        self.appViewModel = appViewModel
+//    }
+    
     func stopListeners() {
         proposalsListener?.remove()
         acceptedListener?.remove()
@@ -44,7 +50,7 @@ final class ProposalViewModel: ObservableObject {
         isLoading = true
         do{
             _ =  try await ProposalService.shared.postProposal(proposal)
-        } catch{
+        } catch {
             errorMessage = error.localizedDescription
         }
         isLoading = false

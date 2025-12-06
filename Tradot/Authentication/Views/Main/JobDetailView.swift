@@ -11,8 +11,11 @@ struct JobDetailView: View {
     
     @State private var showProposalSheet = false
     
+    @EnvironmentObject var appViewModel: AppViewModel
     @EnvironmentObject var jobViewModel: JobViewModel
     @EnvironmentObject var profileViewModel: ProfileViewModel
+    @StateObject var proposalViewModel = ProposalViewModel()
+    
     var job: Job
     
     var body: some View {
@@ -100,10 +103,8 @@ struct JobDetailView: View {
             .padding()// end of VStack
         } // end of Scroll View
         .sheet(isPresented: $showProposalSheet) {
-            // Temporary placeholder until the real proposal sheet is built
-            Text("Proposal Sheet Placeholder")
-                .font(.title2)
-                .padding()
+            ProposalView(job: Job(id: "1", title: "Test", description: "Desc", clientId: "c1", technicianId: nil, price: 20, status: .open, location: "NY"))
+                .environmentObject(proposalViewModel)
         }
     } // end of var body
     
