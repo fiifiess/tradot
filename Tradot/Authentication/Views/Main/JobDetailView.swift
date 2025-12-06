@@ -9,6 +9,8 @@ import SwiftUI
 
 struct JobDetailView: View {
     
+    @State private var showProposalSheet = false
+    
     @EnvironmentObject var jobViewModel: JobViewModel
     @EnvironmentObject var profileViewModel: ProfileViewModel
     var job: Job
@@ -62,14 +64,18 @@ struct JobDetailView: View {
                                 }
                                 .buttonStyle(.borderedProminent)
                                 
-                                Button("Reject"){
-                                    // Reject action
-                                    Task {
-                                        guard let technicianId = profileViewModel.profile?.id else { return }
-                                        await jobViewModel.rejectJob(job, technicianId: technicianId)
-                                    }
+                                Button("Bid"){
+                                    // Open the proposal view as a sheet
+                                    showProposalSheet = true
                                 }
                                 .buttonStyle(.bordered)
+                        
+//                                    Task {
+//                                        guard let technicianId = profileViewModel.profile?.id else { return }
+//                                        await jobViewModel.rejectJob(job, technicianId: technicianId)
+//                                    }
+//                                }
+//                                .buttonStyle(.bordered)
                             } else if userIsClient() {
                                 Button("Edit"){
                                     // Edit action
@@ -93,6 +99,12 @@ struct JobDetailView: View {
             }
             .padding()// end of VStack
         } // end of Scroll View
+        .sheet(isPresented: $showProposalSheet) {
+            // Temporary placeholder until the real proposal sheet is built
+            Text("Proposal Sheet Placeholder")
+                .font(.title2)
+                .padding()
+        }
     } // end of var body
     
     // MARK: -  Helper Functions
