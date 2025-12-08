@@ -10,11 +10,13 @@ import SwiftUI
 struct JobDetailView: View {
     
     @State private var showProposalSheet = false
+    @State private var showProposalList = false
     
     @EnvironmentObject var appViewModel: AppViewModel
     @EnvironmentObject var jobViewModel: JobViewModel
     @EnvironmentObject var profileViewModel: ProfileViewModel
     @StateObject var proposalViewModel = ProposalViewModel()
+    
     
     var job: Job
     
@@ -57,7 +59,8 @@ struct JobDetailView: View {
                         
                         //Action Buttons
                         HStack(spacing: 16){
-                            if userIsTechnician(){
+                           // if userIsTechnician(){
+                            if profileViewModel.isTechnician {
                                 Button("Save"){
                                     // Save action
                                     Task {
@@ -73,22 +76,35 @@ struct JobDetailView: View {
                                 }
                                 .buttonStyle(.bordered)
                         
-//                                    Task {
-//                                        guard let technicianId = profileViewModel.profile?.id else { return }
-//                                        await jobViewModel.rejectJob(job, technicianId: technicianId)
-//                                    }
-//                                }
-//                                .buttonStyle(.bordered)
-                            } else if userIsClient() {
-                                Button("Edit"){
-                                    // Edit action
-                                }
-                                .buttonStyle(.borderedProminent)
-                                
-                                Button("Delete"){
-                                    // Delete action
-                                }
-                                .buttonStyle(.bordered)
+                            } else if !profileViewModel.isTechnician {
+                                VStack{
+                                    HStack{
+                                        Button("Edit"){
+                                            // Edit action
+                                        }
+                                        .buttonStyle(.borderedProminent)
+                                        
+                                        Button("Delete"){
+                                            // Delete action
+                                        }
+                                        .buttonStyle(.bordered)
+                                    } // end of HStack
+                                    VStack(alignment: .leading, spacing: 12) {
+                                            HStack {
+                                                Text("Proposals (\(proposalViewModel.proposals.count))")
+                                                    .font(.headline)
+                                                Spacer()
+                                                Button("View Proposals") {
+                                                    showProposalList = true
+                                                }
+                                                .font(.subheadline)
+                                                
+                                            }
+                                        }
+                                        .padding()
+                                        .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemBackground)).shadow(radius: 2))
+                                }// end of VStack
+  
                             }
                         }// end of HStack
                     }
@@ -96,6 +112,7 @@ struct JobDetailView: View {
                 }// end of Job Info Card
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemBackground)).shadow(radius: 2))
+
                 // end of VStack
                 
                 
@@ -106,6 +123,16 @@ struct JobDetailView: View {
             ProposalView(job: job)
                 .environmentObject(proposalViewModel)
         }
+        .task {
+            if !profileViewModel.isTechnician {
+                await proposalViewModel.fetchProposals(for: job.id)
+            }
+        }
+        .fullScreenCover(isPresented: $showProposalList) {
+            ProposalListView()           // pass job if needed
+                .environmentObject(proposalViewModel)  // SAME instance
+        }
+
     } // end of var body
     
     // MARK: -  Helper Functions
@@ -153,9 +180,12 @@ struct JobDetailView: View {
 
 struct JobDetailView_Previews: PreviewProvider {
     static var previews: some View {
+        let vm = AppViewModel()
         let sampleJob = Job(id: "1", title: "Sample Job", description: "Repair phone", clientId: "123", technicianId: nil, price: 50, status: .open, location: "Sydney")
         JobDetailView(job: sampleJob)
             .environmentObject(JobViewModel())
+            .environmentObject(AppViewModel())
+            .environmentObject(ProfileViewModel(appViewModel: vm))
     }
 }
 

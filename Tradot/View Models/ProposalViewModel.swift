@@ -92,4 +92,20 @@ final class ProposalViewModel: ObservableObject {
         }
         isLoading = false
     }
+    
+    func fetchProposals(for jobId: String) async {
+        isLoading = true
+        do {
+            let fetched = try await ProposalService.shared.fetchProposals(for: jobId)
+            await MainActor.run {
+                self.proposals = fetched
+            }
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+        isLoading = false
+        
+    }
+    
+
 }

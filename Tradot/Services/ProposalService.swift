@@ -142,5 +142,15 @@ final class ProposalService {
                 handler(proposal)
             }
     }
+    
+    func fetchProposals(for jobId: String) async throws -> [Proposal] {
+        let snapshot = try await db.collection("jobs")
+            .document(jobId)
+            .collection("proposals")
+            .getDocuments()
+
+        return snapshot.documents.compactMap { try? $0.data(as: Proposal.self) }
+    }
+
 
 }

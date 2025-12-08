@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7200AA1E2EE748170006EBA3 /* ProposalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7200AA1D2EE748170006EBA3 /* ProposalListView.swift */; };
 		7203DE9E2EB92DA1006AFF20 /* JobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203DE9D2EB92DA1006AFF20 /* JobViewModel.swift */; };
 		7203DEA02EB9321A006AFF20 /* JobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203DE9F2EB9321A006AFF20 /* JobService.swift */; };
 		72138CB12ECF8D7B0055243C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72138CB02ECF8D7B0055243C /* Review.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7200AA1D2EE748170006EBA3 /* ProposalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalListView.swift; sourceTree = "<group>"; };
 		7203DE9D2EB92DA1006AFF20 /* JobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewModel.swift; sourceTree = "<group>"; };
 		7203DE9F2EB9321A006AFF20 /* JobService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobService.swift; sourceTree = "<group>"; };
 		72138CB02ECF8D7B0055243C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				7281CA952ECF85F3006E8BD0 /* ConversationListView.swift */,
 				72BF5B912ED095CA00B0BEC3 /* SavedJobsView.swift */,
 				72BE37F32ED61B5100D3FB98 /* PostedJobsView.swift */,
+				7200AA1D2EE748170006EBA3 /* ProposalListView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				72AED57A2EB3A82900289828 /* Profile.swift in Sources */,
 				722F59FD2EE4AC81005C9F97 /* ProposalView.swift in Sources */,
 				726EA9132EB4D5E80082A741 /* ProfileService.swift in Sources */,
+				7200AA1E2EE748170006EBA3 /* ProposalListView.swift in Sources */,
 				7216C74C2EA655BF00FE77B6 /* ContentView.swift in Sources */,
 				72E061952EA6A71C005B4396 /* RegisterView.swift in Sources */,
 				723F2E1C2EA7E89C0000D1A4 /* AuthFlowView.swift in Sources */,
