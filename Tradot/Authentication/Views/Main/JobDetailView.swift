@@ -103,7 +103,7 @@ struct JobDetailView: View {
             .padding()// end of VStack
         } // end of Scroll View
         .sheet(isPresented: $showProposalSheet) {
-            ProposalView(job: Job(id: "1", title: "Test", description: "Desc", clientId: "c1", technicianId: nil, price: 20, status: .open, location: "NY"))
+            ProposalView(job: job)
                 .environmentObject(proposalViewModel)
         }
     } // end of var body
