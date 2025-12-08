@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7200AA1E2EE748170006EBA3 /* ProposalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7200AA1D2EE748170006EBA3 /* ProposalListView.swift */; };
+		7200AA202EE75D660006EBA3 /* ProposalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7200AA1F2EE75D660006EBA3 /* ProposalCardView.swift */; };
 		7203DE9E2EB92DA1006AFF20 /* JobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203DE9D2EB92DA1006AFF20 /* JobViewModel.swift */; };
 		7203DEA02EB9321A006AFF20 /* JobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203DE9F2EB9321A006AFF20 /* JobService.swift */; };
 		72138CB12ECF8D7B0055243C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72138CB02ECF8D7B0055243C /* Review.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		7200AA1D2EE748170006EBA3 /* ProposalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalListView.swift; sourceTree = "<group>"; };
+		7200AA1F2EE75D660006EBA3 /* ProposalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalCardView.swift; sourceTree = "<group>"; };
 		7203DE9D2EB92DA1006AFF20 /* JobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewModel.swift; sourceTree = "<group>"; };
 		7203DE9F2EB9321A006AFF20 /* JobService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobService.swift; sourceTree = "<group>"; };
 		72138CB02ECF8D7B0055243C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				72BF5B912ED095CA00B0BEC3 /* SavedJobsView.swift */,
 				72BE37F32ED61B5100D3FB98 /* PostedJobsView.swift */,
 				7200AA1D2EE748170006EBA3 /* ProposalListView.swift */,
+				7200AA1F2EE75D660006EBA3 /* ProposalCardView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				7290B4062EE1BFF0004BCD14 /* Proposal.swift in Sources */,
 				72B538302ECCF9E200AB3FAB /* MessageViewModel.swift in Sources */,
 				723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */,
+				7200AA202EE75D660006EBA3 /* ProposalCardView.swift in Sources */,
 				7290B4082EE1EAD1004BCD14 /* ProposalService.swift in Sources */,
 				72E061912EA6A6E2005B4396 /* AuthService.swift in Sources */,
 				72C9F8DF2EC6000F00749C69 /* JobListView.swift in Sources */,
