@@ -72,37 +72,6 @@ class ProfileService {
         return profile
     }
     
-    // older version
-//    func fetchProfile(uid: String) async throws -> Profile {
-//        let document = try await db.collection("profiles").document(uid).getDocument()
-//
-//        guard document.exists else {
-//            if let cached = loadCachedProfile() {
-//                return cached
-//            }
-//            throw NSError(domain: "ProfileService", code: 404, userInfo: [NSLocalizedDescriptionKey: "Profile not found"])
-//        }
-//
-//        guard let data = document.data() else {
-//            if let cached = loadCachedProfile() {
-//                return cached
-//            }
-//            throw NSError(domain: "ProfileService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid profile data"])
-//        }
-//
-//        do {
-//            let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
-//            let profile = try JSONDecoder().decode(Profile.self, from: jsonData)
-//            cacheProfile(profile)
-//            return profile
-//        } catch {
-//            if let cached = loadCachedProfile() {
-//                return cached
-//            }
-//            throw error
-//        }
-//    }
-    // older version
     
     // MARK: - Update / Save Profile
     func updateProfile(_ profile: Profile) async throws {
@@ -240,6 +209,9 @@ class ProfileService {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
                     let profile = try JSONDecoder().decode(Profile.self, from: jsonData)
+                    
+                    print("🔥 assignedJobs updated: \(profile.assignedJobs ?? [])")
+                    
                     self.cacheProfile(profile)
                     onChange(profile)
                 } catch {

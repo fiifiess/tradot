@@ -16,6 +16,7 @@ final class JobViewModel: ObservableObject {
     @Published var selectedJob: Job?
     @Published var savedJobs: [Job] = []
     @Published var postedJobs: [Job] = []
+    @Published var assignedJobs: [Job] = []
     
     private var jobService = JobService.shared
     private var profileService = ProfileService.shared
@@ -178,6 +179,28 @@ final class JobViewModel: ObservableObject {
 
         } catch {
             errorMessage = error.localizedDescription
+        }
+    }
+    
+    func fetchAssignedJobs(for technicianId: String) async {
+        do {
+            let profile = try await profileService.fetchProfile(uid: technicianId)
+
+            let jobIds = profile.assignedJobs ?? []
+            assignedJobs = try await jobService.getJobsWithIds(jobIds)
+
+
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+    
+    func fetchJob(by id: String) async -> Job? {
+        do {
+            return try await jobService.getJobById(id)
+        } catch {
+            print("❌ Failed to fetch job: \(error.localizedDescription)")
+            return nil
         }
     }
     

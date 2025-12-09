@@ -48,7 +48,10 @@ final class ProposalService {
     
     // Accept a proposal: transactional to update job & proposals atomically (use batched writes or Firestore transaction)
     func acceptProposal(_ proposal: Proposal) async throws {
-        guard let proposalId = proposal.id else { return }
+        guard let proposalId = proposal.id else {
+            print("❌ acceptProposal: Proposal has no ID")
+            return
+        }
 
         let jobRef = db.collection("jobs").document(proposal.jobId)
         let proposalsRef = jobRef.collection("proposals")
@@ -80,6 +83,12 @@ final class ProposalService {
 
         // 3. Commit batch
         try await batch.commit()
+        print("✅ Proposal accepted successfully")
+        
+        let techRef = db.collection("profiles").document(proposal.technicianId)
+        try await techRef.updateData([
+            "assignedJobs": FieldValue.arrayUnion([proposal.jobId])
+        ])
     }
     
     // Reject a proposal
@@ -151,6 +160,8 @@ final class ProposalService {
 
         return snapshot.documents.compactMap { try? $0.data(as: Proposal.self) }
     }
+    
+    
 
 
 }

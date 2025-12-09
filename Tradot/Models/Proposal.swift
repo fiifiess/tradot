@@ -24,4 +24,6 @@ struct Proposal: Codable, Identifiable, Hashable {
     var message: String
     var createdAt: Date = Date()
     var status: ProposalStatus = .pending
+    var isAccepted: Bool?
+    var isRejected: Bool?
 }

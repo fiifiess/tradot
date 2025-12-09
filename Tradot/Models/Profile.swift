@@ -26,9 +26,9 @@ struct Profile: Codable, Identifiable {
     var savedJobs: [String]?
     var workHistory: [String]?
     var jobsPosted: [String]?
-    
     var speciality: String?
     var skills: [String]?
+    var assignedJobs: [String]?
     
     var averageRating: String {
         guard let rating = rating, let count = ratingCount, count > 0 else {
@@ -58,6 +58,7 @@ extension Profile {
         self.savedJobs = nil
         self.workHistory = nil
         self.jobsPosted = nil
+        self.assignedJobs = nil
     }
 }
 

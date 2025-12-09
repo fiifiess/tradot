@@ -25,6 +25,7 @@ class ProfileViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var newSkill: String = ""
     @Published var savedJobs: [Job] = []
+    @Published var assignedJobs: [Job] = []
     @Published var postedJobs: [Job] = []             
     weak var appViewModel: AppViewModel?
     
@@ -277,6 +278,9 @@ class ProfileViewModel: ObservableObject {
             self.errorMessage = error.localizedDescription
         }
     }
+    
+    func addJobToAssignedJobs(jobId: String) async {}
+    func fetchAssignedJobs() async {}
     
     
     // MARK: - Listener for real-time updates

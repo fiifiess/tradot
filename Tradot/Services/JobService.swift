@@ -147,5 +147,21 @@ extension JobService {
 
         return snapshot.documents.compactMap { try? $0.data(as: Job.self) }
     }
+    
+    func getJobById(_ jobId: String) async throws -> Job {
+        let ref = db.collection("jobs").document(jobId)
+        let snapshot = try await ref.getDocument()
+
+        guard snapshot.data() != nil else {
+            throw NSError(domain: "JobService", code: 404, userInfo: [
+                NSLocalizedDescriptionKey: "Job not found"
+            ])
+        }
+
+        // Firestore-native decoding
+        let job = try snapshot.data(as: Job.self)
+        return job
+    }
+
 
 }

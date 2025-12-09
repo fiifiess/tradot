@@ -17,6 +17,9 @@ struct Job: Codable, Identifiable {
     var status: JobStatus
     var location: String?
     var createdAt: Date
+    var assignedProposalId: String?
+    var assignedTechnicianId: String?
+
 
     init(id: String = UUID().uuidString,
          title: String = "",
@@ -26,7 +29,9 @@ struct Job: Codable, Identifiable {
          price: Double = 0,
          status: JobStatus = .pending,
          location: String? = nil,
-         createdAt: Date = Date()) {
+         createdAt: Date = Date(),
+         assignedProposalId: String? = nil,
+         assignedTechnicianId: String? = nil){
         self.id = id
         self.title = title
         self.description = description
@@ -36,6 +41,8 @@ struct Job: Codable, Identifiable {
         self.status = status
         self.location = location
         self.createdAt = createdAt
+        self.assignedProposalId = assignedProposalId
+        self.assignedTechnicianId = assignedTechnicianId
         }
 }
 

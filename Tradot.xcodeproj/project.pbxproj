@@ -24,6 +24,7 @@
 		723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E192EA7DFB20000D1A4 /* AppViewModel.swift */; };
 		723F2E1C2EA7E89C0000D1A4 /* AuthFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E1B2EA7E89C0000D1A4 /* AuthFlowView.swift */; };
 		723F2E1E2EA7E96E0000D1A4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E1D2EA7E96E0000D1A4 /* RootView.swift */; };
+		726772DF2EE8861C00770B81 /* SelectedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726772DE2EE8861C00770B81 /* SelectedJobsView.swift */; };
 		7268E22B2EE2F07100AB2A0D /* ProposalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268E22A2EE2F07100AB2A0D /* ProposalViewModel.swift */; };
 		726EA9112EB4C2020082A741 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA9102EB4C2020082A741 /* ProfileViewModel.swift */; };
 		726EA9132EB4D5E80082A741 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA9122EB4D5E80082A741 /* ProfileService.swift */; };
@@ -79,6 +80,7 @@
 		723F2E192EA7DFB20000D1A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		723F2E1B2EA7E89C0000D1A4 /* AuthFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowView.swift; sourceTree = "<group>"; };
 		723F2E1D2EA7E96E0000D1A4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		726772DE2EE8861C00770B81 /* SelectedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedJobsView.swift; sourceTree = "<group>"; };
 		7268E22A2EE2F07100AB2A0D /* ProposalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewModel.swift; sourceTree = "<group>"; };
 		726EA9102EB4C2020082A741 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		726EA9122EB4D5E80082A741 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				72BE37F32ED61B5100D3FB98 /* PostedJobsView.swift */,
 				7200AA1D2EE748170006EBA3 /* ProposalListView.swift */,
 				7200AA1F2EE75D660006EBA3 /* ProposalCardView.swift */,
+				726772DE2EE8861C00770B81 /* SelectedJobsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				72B538302ECCF9E200AB3FAB /* MessageViewModel.swift in Sources */,
 				723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */,
 				7200AA202EE75D660006EBA3 /* ProposalCardView.swift in Sources */,
+				726772DF2EE8861C00770B81 /* SelectedJobsView.swift in Sources */,
 				7290B4082EE1EAD1004BCD14 /* ProposalService.swift in Sources */,
 				72E061912EA6A6E2005B4396 /* AuthService.swift in Sources */,
 				72C9F8DF2EC6000F00749C69 /* JobListView.swift in Sources */,

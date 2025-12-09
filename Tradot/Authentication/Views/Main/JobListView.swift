@@ -12,21 +12,31 @@ struct JobListView: View {
     @EnvironmentObject var jobViewModel: JobViewModel
     @State private var selectedJob: Job? = nil
     @State private var showingAcceptedJobs = false
+    @State private var showingSavedJobs = false
+    @State private var showingSelectedJobs = false
     
     var body: some View {
         NavigationStack{
             VStack{
-                HStack{
+                VStack{
                     Text("Available Jobs")
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                    Spacer()
-                    NavigationLink(value: "SavedJobs") {
-                        Text("My Saved Jobs")
-                            .font(.subheadline)
-                            .padding(8)
-                            .background(Color.blue.opacity(0.2))
-                            .cornerRadius(8)
+                    HStack{
+                        NavigationLink(value: "SavedJobs") {
+                            Text("My Saved Jobs")
+                                .font(.subheadline)
+                                .padding(8)
+                                .background(Color.blue.opacity(0.2))
+                                .cornerRadius(8)
+                        }
+                        NavigationLink(value: "AssignedJobs") {
+                            Text("My Assigned Jobs")
+                                .font(.subheadline)
+                                .padding(8)
+                                .background(Color.green.opacity(0.2))
+                                .cornerRadius(8)
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -67,8 +77,27 @@ struct JobListView: View {
                 }
             }// end of VStack
             .navigationDestination(for: String.self) { value in
-                if value == "SavedJobs" {
+//                if value == "SavedJobs" {
+//                    SavedJobsView().environmentObject(jobViewModel)
+//                }
+//            }
+//            .task {
+//                await jobViewModel.fetchOpenJobs()
+//            }
+//            .sheet(item: $selectedJob){ job in
+//                JobDetailView(job: job)
+//            }
+//        }// end of Navigation Stack
+//    }
+//}
+                switch value {
+                case "SavedJobs":
                     SavedJobsView().environmentObject(jobViewModel)
+                case "AssignedJobs":
+                    AssignedJobsView()
+                        .environmentObject(jobViewModel)
+                default:
+                    EmptyView()
                 }
             }
             .task {
