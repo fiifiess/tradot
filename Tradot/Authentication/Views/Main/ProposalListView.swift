@@ -9,15 +9,13 @@ import SwiftUI
 
 struct ProposalListView: View {
     
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var appViewModel: AppViewModel
     @EnvironmentObject var proposalViewModel: ProposalViewModel
     @EnvironmentObject var profileViewModel: ProfileViewModel
     
     var body: some View {
-        VStack{
-            Text("Proposals")
-                .font(.largeTitle)
-                .bold()
+        NavigationStack{
             ScrollView{
                 VStack(spacing: 16){
                     ForEach(proposalViewModel.proposals, id: \.self) { proposal in
@@ -38,8 +36,17 @@ struct ProposalListView: View {
                 }
                 .padding(.top)
             } // end of ScrollView
-        } // end of VStack
-        .padding()
+            .navigationTitle("Proposals")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "chevron.left")
+                            .font(.title3)
+                    }
+                }
+            }
+        }// end of NavigationStack
     } // end of View
 }
 
