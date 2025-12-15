@@ -24,7 +24,7 @@
 		723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E192EA7DFB20000D1A4 /* AppViewModel.swift */; };
 		723F2E1C2EA7E89C0000D1A4 /* AuthFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E1B2EA7E89C0000D1A4 /* AuthFlowView.swift */; };
 		723F2E1E2EA7E96E0000D1A4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F2E1D2EA7E96E0000D1A4 /* RootView.swift */; };
-		726772DF2EE8861C00770B81 /* SelectedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726772DE2EE8861C00770B81 /* SelectedJobsView.swift */; };
+		726772DF2EE8861C00770B81 /* AssignedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726772DE2EE8861C00770B81 /* AssignedJobsView.swift */; };
 		7268E22B2EE2F07100AB2A0D /* ProposalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7268E22A2EE2F07100AB2A0D /* ProposalViewModel.swift */; };
 		726EA9112EB4C2020082A741 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA9102EB4C2020082A741 /* ProfileViewModel.swift */; };
 		726EA9132EB4D5E80082A741 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726EA9122EB4D5E80082A741 /* ProfileService.swift */; };
@@ -58,6 +58,7 @@
 		72E0619D2EA6A7C0005B4396 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0619C2EA6A7C0005B4396 /* ProfileView.swift */; };
 		72E0619F2EA6A837005B4396 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0619E2EA6A837005B4396 /* Constants.swift */; };
 		72E061A12EA6A850005B4396 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E061A02EA6A850005B4396 /* Extensions.swift */; };
+		72F406712EF05FF7008E1F42 /* TechnicianProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F406702EF05FF7008E1F42 /* TechnicianProfileViewModel.swift */; };
 		72FFA35F2EBA4216006A5C22 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 72FFA35E2EBA4216006A5C22 /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +81,7 @@
 		723F2E192EA7DFB20000D1A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		723F2E1B2EA7E89C0000D1A4 /* AuthFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowView.swift; sourceTree = "<group>"; };
 		723F2E1D2EA7E96E0000D1A4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		726772DE2EE8861C00770B81 /* SelectedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedJobsView.swift; sourceTree = "<group>"; };
+		726772DE2EE8861C00770B81 /* AssignedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignedJobsView.swift; sourceTree = "<group>"; };
 		7268E22A2EE2F07100AB2A0D /* ProposalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewModel.swift; sourceTree = "<group>"; };
 		726EA9102EB4C2020082A741 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		726EA9122EB4D5E80082A741 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		72E0619C2EA6A7C0005B4396 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		72E0619E2EA6A837005B4396 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		72E061A02EA6A850005B4396 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		72F406702EF05FF7008E1F42 /* TechnicianProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicianProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				72B5382F2ECCF9E200AB3FAB /* MessageViewModel.swift */,
 				721938182ECE2EAC00121CE6 /* ConversationViewModel.swift */,
 				7268E22A2EE2F07100AB2A0D /* ProposalViewModel.swift */,
+				72F406702EF05FF7008E1F42 /* TechnicianProfileViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -251,7 +254,7 @@
 				72BE37F32ED61B5100D3FB98 /* PostedJobsView.swift */,
 				7200AA1D2EE748170006EBA3 /* ProposalListView.swift */,
 				7200AA1F2EE75D660006EBA3 /* ProposalCardView.swift */,
-				726772DE2EE8861C00770B81 /* SelectedJobsView.swift */,
+				726772DE2EE8861C00770B81 /* AssignedJobsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -384,7 +387,7 @@
 				72B538302ECCF9E200AB3FAB /* MessageViewModel.swift in Sources */,
 				723F2E1A2EA7DFB20000D1A4 /* AppViewModel.swift in Sources */,
 				7200AA202EE75D660006EBA3 /* ProposalCardView.swift in Sources */,
-				726772DF2EE8861C00770B81 /* SelectedJobsView.swift in Sources */,
+				726772DF2EE8861C00770B81 /* AssignedJobsView.swift in Sources */,
 				7290B4082EE1EAD1004BCD14 /* ProposalService.swift in Sources */,
 				72E061912EA6A6E2005B4396 /* AuthService.swift in Sources */,
 				72C9F8DF2EC6000F00749C69 /* JobListView.swift in Sources */,
@@ -393,6 +396,7 @@
 				72C9F8E52EC604FB00749C69 /* EditJobView.swift in Sources */,
 				72138CB12ECF8D7B0055243C /* Review.swift in Sources */,
 				72E0619D2EA6A7C0005B4396 /* ProfileView.swift in Sources */,
+				72F406712EF05FF7008E1F42 /* TechnicianProfileViewModel.swift in Sources */,
 				72B5382A2ECCDC7F00AB3FAB /* Message.swift in Sources */,
 				72E0618D2EA6A61F005B4396 /* User.swift in Sources */,
 				7268E22B2EE2F07100AB2A0D /* ProposalViewModel.swift in Sources */,

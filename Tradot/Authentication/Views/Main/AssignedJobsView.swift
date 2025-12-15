@@ -76,8 +76,11 @@ struct AssignedJobsView: View {
     }
 }
 
-struct SelectedJobsView_Previews: PreviewProvider {
+struct AssignedJobsView_Previews: PreviewProvider {
     static var previews: some View {
+        let appVM = AppViewModel()
         AssignedJobsView()
+            .environmentObject(JobViewModel())
+            .environmentObject(ProfileViewModel(appViewModel: appVM))
     }
 }
