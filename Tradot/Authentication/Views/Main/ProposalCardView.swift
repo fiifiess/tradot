@@ -41,14 +41,21 @@ struct ProposalCardView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.green)
-
+                
                 Button("Reject") {
                     onReject(proposal)
                 }
                 .buttonStyle(.bordered)
                 .tint(.red)
+                
+                NavigationLink(destination: TechnicianProfileView(technicianId: proposal.technicianId)) {
+                    Text("View Profile")
+                        .buttonStyle(.bordered)
+                        .tint(.blue)
+                }
             }
             .padding(.top, 8)
+
         }
         .padding()
         .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemBackground)).shadow(radius: 2))

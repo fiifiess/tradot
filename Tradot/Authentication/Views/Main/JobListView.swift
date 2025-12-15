@@ -77,19 +77,7 @@ struct JobListView: View {
                 }
             }// end of VStack
             .navigationDestination(for: String.self) { value in
-//                if value == "SavedJobs" {
-//                    SavedJobsView().environmentObject(jobViewModel)
-//                }
-//            }
-//            .task {
-//                await jobViewModel.fetchOpenJobs()
-//            }
-//            .sheet(item: $selectedJob){ job in
-//                JobDetailView(job: job)
-//            }
-//        }// end of Navigation Stack
-//    }
-//}
+
                 switch value {
                 case "SavedJobs":
                     SavedJobsView().environmentObject(jobViewModel)

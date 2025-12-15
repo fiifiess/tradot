@@ -15,7 +15,7 @@ import SwiftUI
 final class TechnicianProfileViewModel: ObservableObject {
     
     @Published var profile: Profile?
-    @Published var workHistoryJobs: [Job] = []
+    @Published var assignedJobs: [Job] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
     
@@ -35,17 +35,20 @@ final class TechnicianProfileViewModel: ObservableObject {
         }
     }
     
+    // Change this to the one that fetches Assigned Jobs
     private func fetchWorkHistory(from jobIds: [String]) async {
         guard !jobIds.isEmpty else {
-            self.workHistoryJobs = []
+            self.assignedJobs = []
             return
         }
         do {
-            self.workHistoryJobs = try await jobService.getJobsWithIds(jobIds)
+            self.assignedJobs = try await jobService.getJobsWithIds(jobIds)
         } catch {
             self.errorMessage = error.localizedDescription
         }
     }
+    
+    
     
     // MARK: - Convenience accessors (read-only)
     var displayName: String { profile?.name ?? "Unknown" }

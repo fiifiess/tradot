@@ -19,10 +19,10 @@ struct AssignedJobsView: View {
     var body: some View {
         VStack {
             if isLoading {
-                ProgressView("Loading selected jobs...")
+                ProgressView("Loading assigned jobs...")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if jobs.isEmpty {
-                Text("No selected jobs yet.")
+                Text("No assigned jobs yet.")
                     .foregroundColor(.gray)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
