@@ -44,7 +44,7 @@ final class JobService {
     
     func fetchOpenJobs() async throws -> [Job]{
         let snapshot = try await db.collection(jobsCollection)
-            .whereField("status", in: ["open", "accepted"])
+            .whereField("status", in: ["open", "pending"])
             .getDocuments()
         return snapshot.documents.compactMap { try? $0.data(as: Job.self) }
     }

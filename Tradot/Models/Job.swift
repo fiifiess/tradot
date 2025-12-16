@@ -47,9 +47,9 @@ struct Job: Codable, Identifiable {
 }
 
 enum JobStatus: String, Codable {
-    case open // Posted but not accepted by any technician yet
-    case pending // Has been accepted and is currently being worked on.
-    case assigned // Has been accepted 
-    case completed // Has been accepted and completed
-    case cancelled // Has been accepted but cancelled by either technician or client
+    case open // Posted but not accepted by any technician yet.
+    case pending // Bids have been made. Client may be reviewing bids.
+    case assigned // Has been accepted and is currently being worked on.
+    case completed // Has been accepted and completed.
+    case cancelled // Has been accepted but cancelled by either technician or client.
 }
