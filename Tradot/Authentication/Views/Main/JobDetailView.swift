@@ -141,7 +141,7 @@ struct JobDetailView: View {
         switch status {
         case .open: return .yellow
         case .pending: return .orange
-        case .accepted: return .blue
+        case .assigned: return .blue
         case .completed: return .green
         case .cancelled: return .red
         }
@@ -151,7 +151,7 @@ struct JobDetailView: View {
         switch status {
         case .open: return "Open"
         case .pending: return "Pending"
-        case .accepted: return "Accepted"
+        case .assigned: return "Accepted"
         case .completed: return "Completed"
         case .cancelled: return "Cancelled"
         }

@@ -91,7 +91,6 @@ struct TechnicianProfileView: View {
         .navigationTitle("Technician Profile")
         .navigationBarBackButtonHidden(false)
         .task {
-            let actualTechie = proposalViewModel.proposals
             await
             technicianProfileViewModel.fetchTechnicianProfile(technicianId: technicianId)
             await loadSelectedJobs()

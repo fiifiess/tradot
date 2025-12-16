@@ -122,7 +122,7 @@ extension JobService {
     func saveJob(job: Job, technicianId: String) async throws {
         // Update job status
         var updatedJob = job
-        updatedJob.status = .accepted
+        updatedJob.status = .assigned
         try await updateJob(updatedJob)
         
         // Update technician's profile

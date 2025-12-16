@@ -18,6 +18,7 @@ final class ProposalViewModel: ObservableObject {
     
     private var proposalsListener: ListenerRegistration? = nil
     private var acceptedListener: ListenerRegistration? = nil
+    private let jobService = JobService()
     
 //    weak var appViewModel: AppViewModel?
 //    
@@ -50,6 +51,16 @@ final class ProposalViewModel: ObservableObject {
         isLoading = true
         do{
             _ =  try await ProposalService.shared.postProposal(proposal)
+            // 2️⃣ Fetch the job
+            var job = try await jobService.getJobById(proposal.jobId) //else {
+//                throw NSError(domain: "ProposalViewModel", code: 404, userInfo: [NSLocalizedDescriptionKey: "Job not found"])
+//            }
+            // 3️⃣ Update status if still open
+            if job.status == .open {
+                job.status = .pending
+                try await jobService.updateJob(job)
+            }
+            
         } catch {
             errorMessage = error.localizedDescription
         }
