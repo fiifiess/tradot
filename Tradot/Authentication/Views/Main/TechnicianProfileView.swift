@@ -11,6 +11,7 @@ struct TechnicianProfileView: View {
     
     @EnvironmentObject var jobViewModel: JobViewModel
     @EnvironmentObject var profileViewModel: ProfileViewModel
+    @EnvironmentObject var proposalViewModel: ProposalViewModel
     @StateObject private var technicianProfileViewModel = TechnicianProfileViewModel()
     @State private var jobs: [Job] = []
     @State private var isLoading = true
@@ -90,13 +91,15 @@ struct TechnicianProfileView: View {
         .navigationTitle("Technician Profile")
         .navigationBarBackButtonHidden(false)
         .task {
-            await technicianProfileViewModel.fetchTechnicianProfile(technicianId: technicianId)
+            let actualTechie = proposalViewModel.proposals
+            await
+            technicianProfileViewModel.fetchTechnicianProfile(technicianId: technicianId)
             await loadSelectedJobs()
         }
     }
     
     func loadSelectedJobs() async {
-        guard let selectedIds = profileViewModel.profile?.assignedJobs, !selectedIds.isEmpty else {
+        guard let selectedIds = technicianProfileViewModel.profile?.assignedJobs, !selectedIds.isEmpty else {
             isLoading = false
             return
         }

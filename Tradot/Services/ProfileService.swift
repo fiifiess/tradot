@@ -260,5 +260,21 @@ class ProfileService {
         clearCachedProfile()
     }
     
+    /// Fetch a public profile by explicit user ID (used for technician profiles)
+    func fetchProfileById(_ uid: String) async throws -> Profile {
+        let snapshot = try await db
+            .collection("profiles")
+            .document(uid)
+            .getDocument()
+
+        guard snapshot.exists else {
+            throw NSError(domain: "ProfileService", code: 404, userInfo: [
+                NSLocalizedDescriptionKey: "Profile not found"
+            ])
+        }
+
+        return try snapshot.data(as: Profile.self)
+    }
+    
     
 }

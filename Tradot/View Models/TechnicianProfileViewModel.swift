@@ -28,7 +28,7 @@ final class TechnicianProfileViewModel: ObservableObject {
         isLoading = true
         defer { isLoading = false }
         do {
-            let fetched = try await profileService.fetchProfile(uid: technicianId)
+            let fetched = try await profileService.fetchProfileById(technicianId)
             self.profile = fetched
             print("Fetched profile \(fetched.id)")
             await fetchWorkHistory(from: fetched.workHistory ?? [])
