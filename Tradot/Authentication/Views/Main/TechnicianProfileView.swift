@@ -59,7 +59,7 @@ struct TechnicianProfileView: View {
                 }
                 // MARK: - Assigned Jobs
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Assigned Jobs")
+                    Text("Work Portfolio")
                         .font(.headline)
                     if technicianProfileViewModel.assignedJobs.isEmpty {
                         Text("No assigned jobs yet.")
@@ -90,8 +90,8 @@ struct TechnicianProfileView: View {
         .navigationTitle("Technician Profile")
         .navigationBarBackButtonHidden(false)
         .task {
-            await //technicianProfilViewModel.fetchTechnicianProfile(technicianId: technicianId)
-            loadSelectedJobs()
+            await technicianProfileViewModel.fetchTechnicianProfile(technicianId: technicianId)
+            await loadSelectedJobs()
         }
     }
     

@@ -24,11 +24,13 @@ final class TechnicianProfileViewModel: ObservableObject {
     
     /// Read-only public profile fetch
     func fetchTechnicianProfile(technicianId: String) async {
+        print("TechnicianVieModel: fetchTechnicianProfile entered...")
         isLoading = true
         defer { isLoading = false }
         do {
             let fetched = try await profileService.fetchProfile(uid: technicianId)
             self.profile = fetched
+            print("Fetched profile \(fetched.id)")
             await fetchWorkHistory(from: fetched.workHistory ?? [])
         } catch {
             self.errorMessage = error.localizedDescription
