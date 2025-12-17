@@ -11,6 +11,7 @@ struct LoginView: View {
     
     @EnvironmentObject var appViewModel: AppViewModel
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var profileViewModel: ProfileViewModel
     
     var body: some View {
         VStack(spacing: 16){
@@ -34,15 +35,28 @@ struct LoginView: View {
         .navigationTitle("Login")
         .onAppear {
             authViewModel.appViewModel = appViewModel
+            Task { @MainActor in
+                if let userId = authViewModel.authService.currentUser()?.id {
+                    await profileViewModel.fetchProfile(for: userId)
+                    print("📦 Profile fetched on appear: \(profileViewModel.profile?.imageUrl ?? "No image URL")")
+                }
+            }
         }
     }
 }
 
+
+
+
+
+
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
+        let appVM = AppViewModel()
         LoginView()
             .environmentObject(AppViewModel())
             .environmentObject(AuthViewModel())
+            .environmentObject(ProfileViewModel(appViewModel: appVM))
         
     }
 }

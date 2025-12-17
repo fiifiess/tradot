@@ -271,14 +271,14 @@ struct ProfileView: View {
                 
             }
             .navigationTitle("Profile")
-            .onAppear {
-                Task { @MainActor in
-                    if let userId = authViewModel.authService.currentUser()?.id {
-                        await profileViewModel.fetchProfile(for: userId)
-                        print("📦 Profile fetched on appear: \(profileViewModel.profile?.imageUrl ?? "No image URL")")
-                    }
-                }
-            }
+//            .onAppear {
+//                Task { @MainActor in
+//                    if let userId = authViewModel.authService.currentUser()?.id {
+//                        await profileViewModel.fetchProfile(for: userId)
+//                        print("📦 Profile fetched on appear: \(profileViewModel.profile?.imageUrl ?? "No image URL")")
+//                    }
+//                }
+//            }
         }
     }
     
