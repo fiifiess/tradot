@@ -50,7 +50,7 @@ struct AssignedJobsView: View {
                 .listStyle(.plain)
             }
         }
-        .navigationTitle("Selected Jobs")
+        .navigationTitle("Assigned Jobs")
         .task {
             await loadSelectedJobs()
         }
