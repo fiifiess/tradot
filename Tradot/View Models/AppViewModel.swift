@@ -14,6 +14,8 @@ class AppViewModel: ObservableObject {
         
     @Published var authViewModel = AuthViewModel()
     @Published var profileViewModel: ProfileViewModel? = nil
+//    @Published var activeRole: String = "client"
+
 
     
     init() {
@@ -44,6 +46,12 @@ class AppViewModel: ObservableObject {
             print("AppViewModel: starting fetchProfile(for: \(user.id))")
             await self.profileViewModel?.fetchProfile(for: user.id)
             print("AppViewModel: fetchProfile completed — profile id in viewModel: \(String(describing: self.profileViewModel?.profile?.id))")
+            
+//            // 🔑 Initialize activeRole from persisted profile role
+//            if let role = self.profileViewModel?.profile?.role {
+//                self.activeRole = role
+//                print("AppViewModel: activeRole initialized to \(role)")
+//            }
             
             // 3. start Firestore listener
             print("AppViewModel: starting listener for uid = \(user.id)")

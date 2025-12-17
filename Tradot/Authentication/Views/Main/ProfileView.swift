@@ -103,6 +103,19 @@ struct ProfileView: View {
                     
                     VStack(spacing: 10) {
                         
+//                        // 🔄 Runtime role toggle (Uber-style)
+//                        Toggle(
+//                            "Switch to Technician Mode",
+//                            isOn: Binding(
+//                                get: { appViewModel.activeRole == "technician" },
+//                                set: { isOn in
+//                                    appViewModel.activeRole = isOn ? "technician" : "client"
+//                                }
+//                            )
+//                        )
+//                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+//
+                        
                         Picker("Role", selection: Binding(
                             get: { profileViewModel.profile?.role ?? "client" },
                             set: { newValue in

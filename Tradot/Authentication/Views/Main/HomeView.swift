@@ -38,6 +38,15 @@ struct HomeView: View {
             // Force refresh when user role updates
             print(appViewModel.$currentUser)
         }
+//        .onAppear {
+//
+//            Task { @MainActor in
+//                if let userId = authViewModel.authService.currentUser()?.id {
+//                    await profileViewModel.fetchProfile(for: userId)
+//                    print("📦 Profile fetched on appear: \(profileViewModel.profile?.imageUrl ?? "No image URL")")
+//                }
+//            }
+//        }
     }// end of body View
 }
 

@@ -18,10 +18,6 @@ struct LoginView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             SecureField("Password", text: $authViewModel.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-//            if !(authViewModel.errorMessage?.isEmpty ?? false) {
-//                Text(authViewModel.errorMessage ?? "Something wrong with your password")
-//                    .foregroundColor(.red)
-//            }
             
             if let error = authViewModel.errorMessage {
                 Text(error.isEmpty ? "Something wrong with your password" : error)
