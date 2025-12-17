@@ -62,7 +62,7 @@ final class ProposalService {
         let batch = db.batch()
 
         batch.updateData([
-            "status": "accepted",
+            "status": "assigned",
             "assignedTechnicianId": proposal.technicianId,
             "updatedAt": FieldValue.serverTimestamp()
         ], forDocument: jobRef)

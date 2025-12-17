@@ -52,9 +52,7 @@ final class ProposalViewModel: ObservableObject {
         do{
             _ =  try await ProposalService.shared.postProposal(proposal)
             // 2️⃣ Fetch the job
-            var job = try await jobService.getJobById(proposal.jobId) //else {
-//                throw NSError(domain: "ProposalViewModel", code: 404, userInfo: [NSLocalizedDescriptionKey: "Job not found"])
-//            }
+            var job = try await jobService.getJobById(proposal.jobId)
             // 3️⃣ Update status if still open
             if job.status == .open {
                 job.status = .pending
@@ -71,6 +69,12 @@ final class ProposalViewModel: ObservableObject {
         isLoading = true
         do{
             _ = try await ProposalService.shared.acceptProposal(proposal)
+            var job = try await jobService.getJobById(proposal.jobId)
+            // 3️⃣ Update status
+            if job.status == .pending {
+                job.status = .assigned
+                try await jobService.updateJob(job)
+            }
         } catch{
             errorMessage = error.localizedDescription
         }

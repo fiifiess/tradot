@@ -121,8 +121,7 @@ extension JobService {
     /// Save a job: updates the job status, adds jobId to technician's workHistory and client's jobsPosted
     func saveJob(job: Job, technicianId: String) async throws {
         // Update job status
-        var updatedJob = job
-        updatedJob.status = .assigned
+        let updatedJob = job
         try await updateJob(updatedJob)
         
         // Update technician's profile
