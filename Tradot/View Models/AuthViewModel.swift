@@ -41,15 +41,13 @@ final class AuthViewModel: ObservableObject {
             appViewModel?.handleLogin(user: user)
             updateCurrentUserId()
             print("AuthViewModel.logIn(): appViewModel.handleLogin called. currentUserID = \(String(describing: currentUserID))")
-            errorMessage = ""
-            successMessage = ""
+            successMessage = "Login successful"
             if let uID = currentUserId(){
                 print("This is the user ID: \(uID)")
             }
         } catch {
             print("AuthViewModel.logIn(): sign-in FAILED: \(error.localizedDescription)")
             errorMessage = error.localizedDescription
-            successMessage = ""
         }
         
         isLoading = false
